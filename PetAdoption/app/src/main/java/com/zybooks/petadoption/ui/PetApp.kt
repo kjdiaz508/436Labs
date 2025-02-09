@@ -40,6 +40,7 @@ import androidx.navigation.compose.rememberNavController
 import com.zybooks.petadoption.data.PetDataSource
 import com.zybooks.petadoption.data.PetGender
 import com.zybooks.petadoption.ui.theme.PetAdoptionTheme
+import kotlinx.serialization.Serializable
 
 sealed class Routes {
    @Serializable
@@ -167,6 +168,8 @@ fun DetailScreen(
       topBar = {
          PetAppBar(
             title = "Details",
+            canNavigateBack = true,
+            onUpClick = onUpClick
          )
       }
    ) { innerPadding ->
@@ -234,6 +237,8 @@ fun AdoptScreen(
       topBar = {
          PetAppBar(
             title = "Thank You!",
+            canNavigateBack = true,
+            onUpClick = onUpClick,
          )
       }
    ) { innerPadding ->
